@@ -33,6 +33,7 @@ public class AccessFilter extends ZuulFilter {
 			return null;
 		}
 		logger.info("access token ok!！");
+		logger.info("testing");
 		return null;
 	}
 
