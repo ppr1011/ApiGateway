@@ -16,7 +16,15 @@ public class AccessFilter extends ZuulFilter {
 	@Override
 	public boolean shouldFilter() {
 		// TODO Auto-generated method stub
-		return true;
+		RequestContext ctx = RequestContext.getCurrentContext();
+		HttpServletRequest request = ctx.getRequest();
+		String requestUrl = request.getRequestURL().toString();
+		if(requestUrl.contains("sao")) {
+			return false;
+		}
+		else {
+			return true;			
+		}
 	}
 
 	@Override
